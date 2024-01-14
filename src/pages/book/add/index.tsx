@@ -1,5 +1,7 @@
-import { BookForm } from "@/components";
+import React from "react";
 
-export default function Book() {
-  return <BookForm title="图书添加" />;
-}
+const BookADD = () => {
+  return <div>BookADD</div>;
+};
+
+export default BookADD;

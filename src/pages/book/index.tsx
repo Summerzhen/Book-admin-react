@@ -1,5 +1,5 @@
 import { bookDelete, getBookList, getCategoryList } from "@/api";
-import { AuthHoc, Content, Layout } from "@/components";
+import { Content, Layout } from "@/components";
 import { USER_ROLE } from "@/constants";
 import { BookQueryType, BookType, CategoryType } from "@/types";
 import { useCurrentUser } from "@/utils/hoos";
@@ -209,11 +209,9 @@ export default function Book() {
     <Content
       title="图书列表"
       operation={
-        <AuthHoc>
-          <Button type="primary" onClick={handleBookAdd}>
-            添加
-          </Button>
-        </AuthHoc>
+        <Button type="primary" onClick={handleBookAdd}>
+          添加
+        </Button>
       }
     >
       <Form

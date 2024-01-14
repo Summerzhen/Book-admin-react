@@ -162,7 +162,7 @@ const Layout: React.FC<
               <Dropdown menu={{ items: USER_ITEMS }} placement="bottom">
                 <span onClick={(e) => e.preventDefault()}>
                   <Space>
-                    {user?.nickName}
+                    管理员
                     <DownOutlined />
                   </Space>
                 </span>

@@ -1,7 +1,7 @@
-import { BorrowForm } from "@/components";
+import React from "react";
 
-const BorrowBook: React.FC<any> = () => {
-  return <BorrowForm title="借阅添加" />;
+const borrow = () => {
+  return <div>borrow</div>;
 };
 
-export default BorrowBook;
+export default borrow;

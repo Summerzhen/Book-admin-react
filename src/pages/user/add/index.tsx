@@ -1,7 +1,7 @@
-import { UserForm } from "@/components";
+import React from "react";
 
-const UserAdd: React.FC<null> = () => {
-  return <UserForm title="用户添加" />;
+const index = () => {
+  return <div>user-add</div>;
 };
 
-export default UserAdd;
+export default index;

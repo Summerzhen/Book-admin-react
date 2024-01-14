@@ -5,7 +5,7 @@ import {
   getBorrowList,
   getCategoryList,
 } from "@/api";
-import { AuthHoc, Content, Layout } from "@/components";
+import { Content, Layout } from "@/components";
 import { BORROW_STATUS } from "@/constants";
 import { BookType, BorrowQueryType, BorrowType, CategoryType } from "@/types";
 import { useCurrentUser } from "@/utils/hoos";
@@ -114,29 +114,27 @@ export default function Borrow() {
               归还
             </Button>
           ) : null}
-          <AuthHoc>
-            <Button
-              type="link"
-              block
-              onClick={() => {
-                router.push(`/borrow/edit/${row._id}`);
-              }}
-            >
-              编辑
-            </Button>
-          </AuthHoc>
-          <AuthHoc>
-            <Button
-              type="link"
-              block
-              danger
-              onClick={() => {
-                handleDeleteModal(row._id as string);
-              }}
-            >
-              删除
-            </Button>
-          </AuthHoc>
+
+          <Button
+            type="link"
+            block
+            onClick={() => {
+              router.push(`/borrow/edit/${row._id}`);
+            }}
+          >
+            编辑
+          </Button>
+
+          <Button
+            type="link"
+            block
+            danger
+            onClick={() => {
+              handleDeleteModal(row._id as string);
+            }}
+          >
+            删除
+          </Button>
         </Space>
       ),
     },
@@ -252,19 +250,19 @@ export default function Borrow() {
               />
             </Form.Item>
           </Col>
-          <AuthHoc>
-            <Col span={5}>
-              <Form.Item name="user" label="借阅人">
-                <Select placeholder="请选择" allowClear>
-                  {categoryList.map((category) => (
-                    <Option key={category._id} value={category._id}>
-                      {category.name}
-                    </Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            </Col>
-          </AuthHoc>
+
+          <Col span={5}>
+            <Form.Item name="user" label="借阅人">
+              <Select placeholder="请选择" allowClear>
+                {categoryList.map((category) => (
+                  <Option key={category._id} value={category._id}>
+                    {category.name}
+                  </Option>
+                ))}
+              </Select>
+            </Form.Item>
+          </Col>
+
           <Col span={9} style={{ textAlign: "left" }}>
             <Button type="primary" htmlType="submit">
               搜索
